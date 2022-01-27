@@ -33,8 +33,8 @@ const Test = () => {
   const [searchValue, setSearchValue] = useState('');
   const [{ data, loader }, setUrl] = useHackerApi('');
 
-  const onChangeInput = (e) => {
-    setUrl(e.target.value);
+  const onChangeInput = (input) => {
+    setUrl(input);
   };
   const debounceAPI = (func, wait) => {
     let timeout;
@@ -56,7 +56,11 @@ const Test = () => {
         <input
           type='text'
           placeholder='enter any text'
-          onChange={optimisedDebounce}
+          value={searchValue}
+          onChange={(e) => {
+            setSearchValue(e.target.value);
+            optimisedDebounce(e.target.value);
+          }}
         />
       </div>
 
