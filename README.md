@@ -1,3 +1,5 @@
+# This project is for practice of react new topics.
+# I'll add topics in this project which i need to enhance or learn
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
