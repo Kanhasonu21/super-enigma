@@ -2,8 +2,8 @@ import React from 'react';
 
 function Event() {
   const onClickButton = (e) => {
-    console.log('button clicked');
-    // e.stopPropagation();
+    console.log(e);
+    e.stopPropagation();
   };
   const onClickInnerDiv = (e) => {
     console.log('inner div clicked');
@@ -14,6 +14,10 @@ function Event() {
   const onClickOuterMostDiv = (e) => {
     console.log('outer most clicked');
   };
+  const onHoverMouse = (e) => {
+    console.log('mouse hovered on button');
+    // e.stopPropagation();
+  };
   return (
     <div
       style={{ border: '2px solid black', padding: '6rem', margin: '2rem' }}
@@ -21,7 +25,7 @@ function Event() {
     >
       <div
         style={{ border: '2px solid blue', padding: '4rem' }}
-        onClickCapture={onClickOuterDiv}
+        onClick={onClickOuterDiv}
       >
         {/* onClickCapture is used for event capturing */}
         {/* onClick is used for event bubbling */}
@@ -31,7 +35,8 @@ function Event() {
           onClick={onClickInnerDiv}
         >
           <button
-            onClickCapture={onClickButton}
+            onClickCapture={onHoverMouse}
+            onClick={onClickButton}
             style={{ height: '3rem', width: '8rem' }}
           >
             Click Me
