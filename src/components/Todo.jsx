@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 
 const HighOrderWorkItem = (Component) => (props) =>
-  !props.todos ? null : <Component {...props} />;
+  !props.todos ? (
+    <span>null</span>
+  ) : props.todos.length === 0 ? (
+    <>
+      <span>no todos</span>
+    </>
+  ) : (
+    <Component {...props} />
+  );
 
 function WorkItem({ todos }) {
   return (
