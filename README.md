@@ -29,4 +29,4 @@ Open [Blog](https://www.robinwieruch.de/react-higher-order-components/)
 
 ### Custom Hooks
 
-Open [Blog] (https://www.robinwieruch.de/react-hooks-fetch-data/) to read
+Open [Blog](https://www.robinwieruch.de/react-hooks-fetch-data/) to read
